@@ -1,17 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import App from "./App";
+import Expenses from "./routes/expenses";
+import Invoices from "./routes/invoices";
+import Invoice from './routes/invoice';
+import ToDoList from './routes/todo/todo-list';
+import TodoCreateAndEdit from './routes/todo/todo-create-edit';
+import ViewModel from './routes/viewModel';
+import URefExample from './routes/uRefExample';
+import UEffectExample from './routes/uEffectExample';
+
+const container = document.getElementById('app');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App tab="home" />}>
+        <Route path="todos" element={<ToDoList />}>
+          
+        </Route>
+        <Route path="viewmodel" element={<ViewModel />} />
+        
+        <Route path="ueffect" element={<UEffectExample title='Power Geoff' />} />
+        <Route path="uref" element={<URefExample />} />
+        <Route path="viewmodel/:modelId" element={<ViewModel />} />
+        <Route path="todos/create" element={<TodoCreateAndEdit />} />
+        <Route path="todos/edit/:todoId" element={<TodoCreateAndEdit />} />
+        <Route path="expenses" element={<Expenses />} />
+        <Route path="invoices" element={<Invoices />}>
+          <Route
+            index
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>Select an invoice</p>
+              </main>
+            }
+          />
+          <Route path=":invoiceId" element={<Invoice />} />
+        </Route>
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Route>
+    </Routes>
+    
+  </BrowserRouter>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
