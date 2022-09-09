@@ -1,5 +1,5 @@
 import React from "react"
-import { Context } from "../state/store";
+import { Context } from "../state/simpleSlice/store";
 
 export default function Expenses() {
   const [state, dispatch] = React.useContext(Context)

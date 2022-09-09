@@ -10,6 +10,7 @@ import TodoCreateAndEdit from './routes/todo/todo-create-edit';
 import ViewModel from './routes/viewModel';
 import URefExample from './routes/uRefExample';
 import UEffectExample from './routes/uEffectExample';
+import UMemoAndCallBack from './routes/uMemoCallBack';
 
 const container = document.getElementById('app');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
@@ -23,6 +24,8 @@ root.render(
         <Route path="viewmodel" element={<ViewModel />} />
         
         <Route path="ueffect" element={<UEffectExample title='Power Geoff' />} />
+        <Route path="umemo" element={<UMemoAndCallBack />} />
+        
         <Route path="uref" element={<URefExample />} />
         <Route path="viewmodel/:modelId" element={<ViewModel />} />
         <Route path="todos/create" element={<TodoCreateAndEdit />} />

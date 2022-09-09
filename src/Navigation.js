@@ -1,7 +1,7 @@
 import React from "react"
 import { Outlet, Link } from "react-router-dom";
 
-import { Context } from "./state/store";
+import { Context } from "./state/simpleSlice/store";
 
 const Navigation = () => {
     const [state, ] = React.useContext(Context)
@@ -19,6 +19,7 @@ const Navigation = () => {
           <Link to="/todos">To Do List</Link> |{" "}
           <Link to="/uref">useRef Hook</Link> |{" "}
           <Link to="/ueffect">useEffect Hook</Link> |{" "}
+          <Link to="/umemo">useMemo & CallBack Hooks</Link> |{" "}
           <Link to="/viewmodel">View Model</Link>
         </nav>
         <Outlet />
