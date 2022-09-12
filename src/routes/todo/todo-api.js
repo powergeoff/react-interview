@@ -3,11 +3,12 @@
 export const getTodos = async () => {
     try {
         const response = await fetch(process.env.REACT_APP_HEROKU_URL);
+        //const response = await fetch('http://google.com')
         const json = await response.json();
         return json;
-        //json.map(todo => setTodos(oldArray => [...oldArray, todo]))
       } catch (error) {
-        console.error("error", error);
+        //console.error("error", error);
+        throw new Error(`Error! status ${error}`);
       }
 }
 

@@ -1,0 +1,28 @@
+import { SearchContext } from "../../state/searchSlice/store";
+import { useContext } from "react";
+
+
+const SearchPage = () => {
+  const [state, dispatch] = useContext(SearchContext);
+  return (
+    <>
+      <h1>Search Results</h1>
+      <>{state.term}</>
+      <div className="search-results">
+      {
+        state.results.map((post) => (
+          <div className="box" key={post.id}>
+            <p>{post.title}</p>
+            <p>{post.author}</p>
+          </div>
+        ))
+      }
+      </div>
+      
+
+      <button onClick={() => dispatch({ type: 'CLEAR'})}>Clear Results</button>
+    </>
+  )
+}
+
+export default SearchPage;

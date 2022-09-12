@@ -2,6 +2,7 @@ import React from "react"
 import { Outlet, Link } from "react-router-dom";
 
 import { Context } from "./state/simpleSlice/store";
+import SearchInput from "./routes/search/search-input";
 
 const Navigation = () => {
     const [state, ] = React.useContext(Context)
@@ -17,10 +18,14 @@ const Navigation = () => {
           <Link to="/invoices">Invoices</Link> |{" "}
           <Link to="/expenses">Expenses</Link> |{" "}
           <Link to="/todos">To Do List</Link> |{" "}
+          <Link to="/debounce">Debounce</Link> |{" "}
           <Link to="/uref">useRef Hook</Link> |{" "}
           <Link to="/ueffect">useEffect Hook</Link> |{" "}
           <Link to="/umemo">useMemo & CallBack Hooks</Link> |{" "}
           <Link to="/viewmodel">View Model</Link>
+
+
+          <SearchInput />
         </nav>
         <Outlet />
       </div>
