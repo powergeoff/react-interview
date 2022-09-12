@@ -7,7 +7,9 @@ const SearchPage = () => {
   return (
     <>
       <h1>Search Results</h1>
-      <>{state.term}</>
+      <div>
+        <div>{`There were ${state.results.length} hits for term: "${state.term}"`}</div>
+      </div>
       <div className="search-results">
       {
         state.results.map((post) => (
