@@ -21,7 +21,8 @@ const Navigation = () => {
           <Link to="/debounce">Debounce</Link> |{" "}
           <Link to="/uref">useRef Hook</Link> |{" "}
           <Link to="/ueffect">useEffect Hook</Link> |{" "}
-          <Link to="/umemo">useMemo & CallBack Hooks</Link> |{" "}
+          <Link to="/umemo">useMemo Hook</Link> |{" "}
+          <Link to="/ucallback">useCallback Hook</Link> |{" "}
           <Link to="/viewmodel">View Model</Link>
 
 

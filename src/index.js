@@ -10,9 +10,10 @@ import TodoCreateAndEdit from './routes/todo/todo-create-edit';
 import ViewModel from './routes/viewModel';
 import URefExample from './routes/uRefExample';
 import UEffectExample from './routes/uEffectExample';
-import UMemoAndCallBack from './routes/uMemoCallBack';
+import UMemoExample from './routes/uMemoExample';
 import DebounceForm from './routes/debounce/form';
 import SearchPage from './routes/search/search-page';
+import UCallBackExample from './routes/uCallBackExample';
 
 const container = document.getElementById('app');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
@@ -27,7 +28,8 @@ root.render(
         <Route path="search" element={<SearchPage />} />
         <Route path="debounce" element={<DebounceForm />} />
         <Route path="ueffect" element={<UEffectExample title='Power Geoff' />} />
-        <Route path="umemo" element={<UMemoAndCallBack />} />
+        <Route path="umemo" element={<UMemoExample />} />
+        <Route path="ucallback" element={<UCallBackExample />} />
         
         <Route path="uref" element={<URefExample />} />
         <Route path="viewmodel/:modelId" element={<ViewModel />} />
