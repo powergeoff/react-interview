@@ -34,7 +34,9 @@ const TodoCreateAndEdit = () => {
             createData();
         }
     }
-    const handleChange = (e) => {
+    //currying
+    const handleChange = (myItem) => (e) => {
+        console.log(myItem)
         const target = e.target;
         const value = target.value;
         const name = target.name;
@@ -49,7 +51,7 @@ const TodoCreateAndEdit = () => {
         <h1>Edit Todo</h1>
         <div>
             <label>Title:</label>
-            <input name='title' onChange={e => handleChange(e)} value={todo.title} />
+            <input name='title' onChange={(e) => handleChange('string')(e)} value={todo.title} />
         </div>
         
         <div>

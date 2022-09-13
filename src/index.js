@@ -13,7 +13,8 @@ import UEffectExample from './routes/uEffectExample';
 import UMemoExample from './routes/uMemoExample';
 import DebounceForm from './routes/debounce/form';
 import SearchPage from './routes/search/search-page';
-import UCallBackExample from './routes/uCallBackExample';
+import UCallBackExample from './routes/uCallBack/uCallBackExample';
+import ViewModelEnhanced from './routes/EnhancedViewModel/viewModelEnhanced';
 
 const container = document.getElementById('app');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
@@ -24,7 +25,7 @@ root.render(
         <Route path="todos" element={<ToDoList />}>
           
         </Route>
-        <Route path="viewmodel" element={<ViewModel />} />
+        <Route path="viewmodel" element={<ViewModelEnhanced />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="debounce" element={<DebounceForm />} />
         <Route path="ueffect" element={<UEffectExample title='Power Geoff' />} />

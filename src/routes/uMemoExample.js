@@ -3,7 +3,7 @@ import {useState, useMemo} from "react";
 
 const UMemoExample = () => {
   const [number, setNumber] = useState(1);
-  const [inc, setInc] = useState(0);
+  const [, setInc] = useState(0);
   const factorial = useMemo(() => factorialOf(number), [number]);
   const onChange = event => {
     setNumber(Number(event.target.value));
