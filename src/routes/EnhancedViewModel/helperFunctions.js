@@ -1,15 +1,15 @@
-
-//export const basePage = (id, description, selections) => (model) => {
-export const basePage = (id, description, selections) => {
-
-    const descriptionView = description ? descriptionSection(id, description) : '';
-    const selectionsView = selections ? selectionSection(id,selections) : '';
-    return <div>{descriptionView} {selectionsView}</div>;
+//closure is the term
+export const basePage = (description, selections) => (modelInstance, state) => {
+    console.log(state)
+    const descriptionView = descriptionSection(modelInstance.id, description);
+    const selectionsView = selectionSection(modelInstance.id, selections);
+    return <div key='mainDiv'><h2>{modelInstance.id}</h2>{descriptionView} {selectionsView}</div>;
 }
 
-export const buttons = (id, value) => <div><button>{value}</button></div>;
+export const buttons = (value, onClick) => (modelInstance, state) => {
+    console.log(modelInstance.id, state)
+    return <div key='buttonDiv'><button onClick={onClick}>{value}</button></div>;
+}
 
-const descriptionSection = (id, description) => <h1>{`Id: ${id} Description: ${description}`}</h1>;
-const selectionSection = (id, selections) => <div>{`Id: ${id} Selections: ${selections}`}</div>;
-
-//const descipriontSection = (id, description)=> () => <div>{description && <T>{id}.{description}<T/>}</div>;
+const descriptionSection = (id, description) => <h1 key={`description${id}`}>{description && `Id: ${id} Description: 'GO GET VALUES FROM TRANSLATION FILE'`}</h1>;
+const selectionSection = (id, selections) => <div key={`selections${id}`}>{selections && `Id: ${id} Selections: 'GO GET VALUES FROM TRANSLATION FILE'`}</div>;
