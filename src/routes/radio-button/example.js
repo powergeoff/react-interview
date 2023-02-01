@@ -13,7 +13,6 @@ const RadioButtonExample = () => {
         const value = parseInt(event.target.value);
         const newArray = [...radioButtons];
         const newForm = {...form};
-        const newFailedArray = [...newForm.failed];
         newArray.forEach(row => {
             if (row.id === value)
             {
@@ -24,7 +23,7 @@ const RadioButtonExample = () => {
                     row.failed = false;
                     newForm.primary = value;
                     newForm.secondary = newForm.secondary === value ? "" : newForm.secondary;
-                    newFailedArray.pop(value);
+                    newForm.failed.pop(value);
                 }
                 else if(className === "secondary")
                 {
@@ -33,7 +32,7 @@ const RadioButtonExample = () => {
                     row.failed = false;
                     newForm.secondary = value;
                     newForm.primary = newForm.primary === value ? "" : newForm.primary;
-                    newFailedArray.pop(value);
+                    newForm.failed.pop(value);
                 }
                 else if (className === "failed")
                 {
@@ -42,7 +41,7 @@ const RadioButtonExample = () => {
                     row.failed = true;
                     newForm.primary = newForm.primary === value ? "" : newForm.primary;
                     newForm.secondary = newForm.secondary === value ? "" : newForm.secondary;
-                    newFailedArray.push(value);
+                    newForm.failed.push(value);
                 }
             }
             else
@@ -58,7 +57,6 @@ const RadioButtonExample = () => {
             }
         })
         setRadioButtons(newArray);
-        newForm.failed = newFailedArray;
         setForm(newForm)
     }
     return (
