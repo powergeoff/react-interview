@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const masks = [{"id": 2475, "name": "Gerson"},{"id": 454, "name": "Halyon"}];
+const masks = [{"id": 2475, "name": "Gerson"},{"id": 454, "name": "Halyon"},{"id": 24, "name": "PAPR"},{"id": 247, "name": "N95"},{"id": 75, "name": "Gerson-3M"}];
 
 const RadioButtonExample = () => {
     const [form, setForm] = useState({ "failed": [], "primary": "", "secondary": ""});
-    const [radioButtons, setRadioButtons] = useState(masks.map((m,index) => { return {"id": m.id, "primary": false, "secondary": false, "failed": false }}));
+    const [radioButtons, setRadioButtons] = useState(masks.map((m) => { return {"id": m.id, "primary": false, "secondary": false, "failed": false }}));
     const handleSubmit = () => {
         console.log(form);
     }
@@ -23,7 +23,10 @@ const RadioButtonExample = () => {
                     row.failed = false;
                     newForm.primary = value;
                     newForm.secondary = newForm.secondary === value ? "" : newForm.secondary;
-                    newForm.failed.pop(value);
+                    if (newForm.failed.findIndex(e => e === value) !== -1)
+                    {
+                        newForm.failed.pop(value);
+                    }
                 }
                 else if(className === "secondary")
                 {
@@ -32,7 +35,10 @@ const RadioButtonExample = () => {
                     row.failed = false;
                     newForm.secondary = value;
                     newForm.primary = newForm.primary === value ? "" : newForm.primary;
-                    newForm.failed.pop(value);
+                    if (newForm.failed.findIndex(e => e === value) !== -1)
+                    {
+                        newForm.failed.pop(value);
+                    }
                 }
                 else if (className === "failed")
                 {
