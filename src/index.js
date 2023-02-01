@@ -15,6 +15,7 @@ import DebounceForm from './routes/debounce/form';
 import SearchPage from './routes/search/search-page';
 import UCallBackExample from './routes/uCallBack/uCallBackExample';
 import ViewModelEnhanced from './routes/EnhancedViewModel/viewModelEnhanced';
+import RadioButtonExample from './routes/radio-button/example';
 
 const container = document.getElementById('app');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
@@ -25,6 +26,7 @@ root.render(
         <Route path="todos" element={<ToDoList />}>
           
         </Route>
+        <Route path="radio" element={<RadioButtonExample />} />
         <Route path="viewmodel" element={<ViewModelEnhanced />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="debounce" element={<DebounceForm />} />
