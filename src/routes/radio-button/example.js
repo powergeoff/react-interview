@@ -7,6 +7,7 @@ const RadioButtonExample = () => {
     const [radioButtons, setRadioButtons] = useState(masks.map((m) => { return {"id": m.id, "primary": false, "secondary": false, "failed": false }}));
     const handleSubmit = () => {
         console.log(form);
+        return form;
     }
     const handleClick = (event) => {
         const className = event.target.className;

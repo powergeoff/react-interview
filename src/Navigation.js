@@ -15,6 +15,7 @@ const Navigation = () => {
             paddingBottom: "1rem",
           }}
         >
+        <Link to="/rerender">Complex Rerender</Link> |{" "}
           <Link to="/radio">Radio Button</Link> |{" "}
           <Link to="/invoices">Invoices</Link> |{" "}
           <Link to="/expenses">Expenses</Link> |{" "}

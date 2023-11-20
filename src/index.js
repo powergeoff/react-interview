@@ -16,6 +16,7 @@ import SearchPage from './routes/search/search-page';
 import UCallBackExample from './routes/uCallBack/uCallBackExample';
 import ViewModelEnhanced from './routes/EnhancedViewModel/viewModelEnhanced';
 import RadioButtonExample from './routes/radio-button/example';
+import Wrapper from './routes/complexRerenders/wrapper';
 
 const container = document.getElementById('app');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
@@ -26,6 +27,7 @@ root.render(
         <Route path="todos" element={<ToDoList />}>
           
         </Route>
+        <Route path="rerender" element={<Wrapper />} />
         <Route path="radio" element={<RadioButtonExample />} />
         <Route path="viewmodel" element={<ViewModelEnhanced />} />
         <Route path="search" element={<SearchPage />} />
